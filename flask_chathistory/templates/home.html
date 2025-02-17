@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | Chatbot</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+<body>
+  <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">🤖 AI Chatbot</div>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Profile</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <div class="hero-text">
+            <h1>Experience the Future of Conversations 🤖</h1>
+            <p>Chat with our AI chatbot for an engaging and intelligent conversation. Start now and explore the power of AI!</p>
+            <a href="{{ url_for('chat') }}">
+                <button class="chat-btn">💬 Start Chatting</button>
+            </a>
+            <br>
+            <a href="{{ url_for('logout') }}" class="logout-btn">🚪 Logout</a>
+        </div>
+        
+        <!-- Right Side Circular Image -->
+        <div class="hero-img">
+            <img src="../images/background.jpg" alt="Chatbot AI">
+        </div>
+    </div>
+</body>
+</html>
