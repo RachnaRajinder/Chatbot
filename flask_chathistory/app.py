@@ -155,6 +155,19 @@ def logout():
     return redirect(url_for('login'))
 
 
+# Route to check database data
+@app.route('/check_data')
+def check_data():
+    if 'user_id' not in session:
+        return redirect(url_for('login'))
+
+    users = User.query.all()
+    chats = ChatHistory.query.all()
+
+    user_data = [{"id": user.id, "username": user.username} for user in users]
+    chat_data = [{"user_id": chat.user_id, "user_message": chat.user_message, "bot_response": chat.bot_response} for chat in chats]
+
+    return jsonify({"users": user_data, "chat_history": chat_data})
 
 
 if __name__ == '__main__':
